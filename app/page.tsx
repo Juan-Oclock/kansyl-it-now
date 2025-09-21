@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import Image from 'next/image'
 import { DotGridHero } from "@/components/dot-grid-reactbits"
 import { PhoneMockup } from "@/components/phone-mockup"
 import { NumberTicker } from "@/components/number-ticker"
@@ -181,33 +182,15 @@ export default function Home() {
           <Reveal delay={0.2}>
             <div className="flex justify-center lg:justify-end lg:mr-[-3rem]">
               <div className="relative group lg:pr-20">
-                <div className="relative w-[280px] sm:w-[320px] md:w-[360px] h-[500px] sm:h-[570px] md:h-[640px] bg-gradient-to-b from-neutral-900/90 to-neutral-900/50 backdrop-blur-xl rounded-2xl border border-neutral-800/50 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]"></div>
-                  <div className="text-center text-neutral-400 z-10">
-                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg 
-                        className="w-10 h-10 text-primary" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={1.5} 
-                          d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" 
-                        />
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={1.5} 
-                          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-sm font-medium">App Demo</p>
-                    <p className="text-xs text-neutral-500 mt-1">Coming soon</p>
-                  </div>
+                <div className="relative w-[280px] sm:w-[320px] md:w-[360px] h-[500px] sm:h-[570px] md:h-[640px] rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/assets/video/kansel app demo.gif"
+                    alt="Kansyl app demo showing how to add trials and manage subscriptions"
+                    fill
+                    className="object-cover object-center"
+                    unoptimized={true}
+                    priority
+                  />
                 </div>
               </div>
             </div>
