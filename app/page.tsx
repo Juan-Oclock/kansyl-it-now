@@ -13,7 +13,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Zap, Bell, TrendingUp, Shield, Cog, UserCheck, Check, Menu, X } from "lucide-react"
+import { Zap, Bell, TrendingUp, Shield, Cog, UserCheck, Check, Menu, X, ScanLine } from "lucide-react"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
@@ -74,7 +74,7 @@ export default function Home() {
             </Reveal>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <AnimatedGradientButton gradientColor="primary" className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold">
-                Download from the App Store
+                Start Free, Upgrade Anytime
               </AnimatedGradientButton>
               <Button variant="ghost" className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold border border-gray-400 hover:bg-[#A8DE28] hover:text-black hover:border-[#A8DE28] transition-all duration-200" asChild>
                 <a href="#how">See how it works</a>
@@ -83,7 +83,7 @@ export default function Home() {
             <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
               <span className="rounded-full border px-3 py-1">iOS 15+</span>
               <span className="rounded-full border px-3 py-1">Privacy-first</span>
-              <span className="rounded-full border px-3 py-1">No account required</span>
+              <span className="rounded-full border px-3 py-1">Scan Receipt with AI</span>
             </div>
           </div>
           <PhoneMockup />
@@ -138,9 +138,9 @@ export default function Home() {
             delay={0.5}
           />
           <FloatingFeatureCard 
-            title="No account required" 
-            description="Start tracking instantly with no sign-up friction."
-            icon={<UserCheck className="w-8 h-8" />}
+            title="Scan Receipt with AI" 
+            description="Automatically extract trial info from receipts using intelligent scanning technology."
+            icon={<ScanLine className="w-8 h-8" />}
             delay={0.6}
           />
         </FloatingFeatureGrid>

@@ -35,7 +35,10 @@ export const metadata: Metadata = {
     title,
     description,
   },
-  icons: { icon: "/favicon.ico" },
+  icons: { 
+    icon: "/favicon.svg",
+    apple: "/favicon.svg"
+  },
 }
 
 export default function RootLayout({
