@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import ShinyText from '@/components/ShinyText'
+import { ComingSoonModal } from '@/components/ComingSoonModal'
 import { DotGridHero } from "@/components/dot-grid-reactbits"
 import { PhoneMockup } from "@/components/phone-mockup"
 import { NumberTicker } from "@/components/number-ticker"
@@ -14,10 +15,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Zap, Bell, TrendingUp, Shield, Cog, UserCheck, Check, Menu, X, ScanLine } from "lucide-react"
+import { Zap, Bell, TrendingUp, Shield, Cog, Check, Menu, X, ScanLine } from "lucide-react"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+  const [comingSoonModalOpen, setComingSoonModalOpen] = React.useState(false)
   
   return (
     <main>
@@ -76,7 +78,11 @@ export default function Home() {
               </p>
             </Reveal>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <AnimatedGradientButton gradientColor="primary" className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold">
+              <AnimatedGradientButton 
+                gradientColor="primary" 
+                className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold cursor-pointer"
+                onClick={() => setComingSoonModalOpen(true)}
+              >
                 Start Free, Upgrade Anytime
               </AnimatedGradientButton>
               <Button variant="ghost" className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold border border-gray-400 hover:bg-[#A8DE28] hover:text-black hover:border-[#A8DE28] transition-all duration-200" asChild>
@@ -277,7 +283,12 @@ export default function Home() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full" size="lg">
+                  <Button 
+                    variant="outline" 
+                    className="w-full cursor-pointer" 
+                    size="lg"
+                    onClick={() => setComingSoonModalOpen(true)}
+                  >
                     Get Started
                   </Button>
                 </CardContent>
@@ -303,7 +314,11 @@ export default function Home() {
                   <p className="text-sm text-primary mt-2 font-medium">Save 44%</p>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full cursor-pointer" 
+                    size="lg"
+                    onClick={() => setComingSoonModalOpen(true)}
+                  >
                     Get Started
                   </Button>
                 </CardContent>
@@ -323,7 +338,12 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground mt-2">Forever access</p>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full" size="lg">
+                  <Button 
+                    variant="outline" 
+                    className="w-full cursor-pointer" 
+                    size="lg"
+                    onClick={() => setComingSoonModalOpen(true)}
+                  >
                     Get Started
                   </Button>
                 </CardContent>
@@ -390,7 +410,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 md:flex-shrink-0">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90 cursor-pointer"
+                    onClick={() => setComingSoonModalOpen(true)}
+                  >
                     Download Free
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">iOS 15+ Required</p>
@@ -436,7 +460,7 @@ export default function Home() {
             <AccordionItem value="item-5">
               <AccordionTrigger>What&apos;s in Premium vs Free?</AccordionTrigger>
               <AccordionContent>
-                Free gets the basics. Premium adds savings tracking, Shortcuts, widgets, iCloud sync, and export.
+                Free gets all premium features including AI receipt scanning, savings tracking, Shortcuts, widgets, iCloud sync, and export - but limited to 5 subscriptions. Premium unlocks unlimited subscriptions.
               </AccordionContent>
             </AccordionItem>
             </Accordion>
@@ -459,7 +483,12 @@ export default function Home() {
             </AnimatedText>
           </p>
           <div className="mt-6 flex justify-center">
-            <AnimatedGradientButton size="lg" gradientColor="success">
+            <AnimatedGradientButton 
+              size="lg" 
+              gradientColor="success"
+              onClick={() => setComingSoonModalOpen(true)}
+              className="cursor-pointer"
+            >
               Download from the App Store
             </AnimatedGradientButton>
           </div>
@@ -470,14 +499,29 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="container flex flex-col items-center justify-between gap-4 py-8 md:flex-row">
-        <div className="text-sm text-muted-foreground">© 2025 Kansyl</div>
+        <div className="text-sm text-muted-foreground">
+          © 2025 Kansyl | Proudly over-engineered by{" "}
+          <a 
+            href="https://juan-oclock.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-[#A8DE28] hover:text-[#A8DE28]/80 transition-colors underline underline-offset-2"
+          >
+            Juan-O&apos;Clock
+          </a>
+        </div>
         <nav className="flex gap-4 text-sm text-muted-foreground">
-          <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-          <a href="#" className="hover:text-foreground transition-colors">Support</a>
-          <a href="#" className="hover:text-foreground transition-colors">Contact</a>
-          <a href="https://github.com/" className="hover:text-foreground transition-colors">GitHub</a>
+          <a href="/privacy" className="hover:text-foreground transition-colors">Privacy</a>
+          <a href="mailto:onelasttimejuan@gmail.com" className="hover:text-foreground transition-colors">Contact</a>
+          <a href="https://github.com/Juan-Oclock/kansyl" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
         </nav>
       </footer>
+      
+      {/* Coming Soon Modal */}
+      <ComingSoonModal 
+        isOpen={comingSoonModalOpen}
+        onClose={() => setComingSoonModalOpen(false)}
+      />
     </main>
   )
 }
