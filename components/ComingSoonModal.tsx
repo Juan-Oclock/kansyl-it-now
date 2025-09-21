@@ -13,7 +13,7 @@ interface ComingSoonModalProps {
 export function ComingSoonModal({ isOpen, onClose }: ComingSoonModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-sm border-muted/50">
+      <DialogContent className="sm:max-w-sm border-muted/50 mx-4 sm:mx-auto">
         <DialogHeader className="space-y-3">
           <div className="mx-auto">
             <div className="relative">

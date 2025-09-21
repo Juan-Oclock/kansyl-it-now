@@ -223,16 +223,18 @@ export default function PrivacyPage() {
 
       {/* Footer */}
       <footer className="container flex flex-col items-center justify-between gap-4 py-8 md:flex-row">
-        <div className="text-sm text-muted-foreground">
-          © 2025 Kansyl | Proudly over-engineered by{" "}
-          <a 
-            href="https://juan-oclock.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-[#A8DE28] hover:text-[#A8DE28]/80 transition-colors underline underline-offset-2"
-          >
-            Juan-O&apos;Clock
-          </a>
+        <div className="text-sm text-muted-foreground text-center md:text-left">
+          <span className="whitespace-nowrap">
+            © 2025 Kansyl | Proudly over-engineered by{" "}
+            <a 
+              href="https://juan-oclock.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-[#A8DE28] hover:text-[#A8DE28]/80 transition-colors underline underline-offset-2"
+            >
+              Juan-O&apos;Clock
+            </a>
+          </span>
         </div>
         <nav className="flex gap-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
