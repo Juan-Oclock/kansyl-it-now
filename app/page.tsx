@@ -274,6 +274,34 @@ export default function Home() {
           </p>
         </Reveal>
         
+        {/* Try for Free Section */}
+        <Reveal delay={0.6}>
+          <div className="mt-12 mx-auto max-w-2xl">
+            <div className="relative rounded-2xl bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-teal-500/10 border border-green-500/20 p-8 text-center">
+              <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px] rounded-2xl"></div>
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 rounded-full bg-green-500/20 px-4 py-2 text-sm font-medium text-green-400 mb-4">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Free Trial Available
+                </div>
+                <h3 className="text-2xl font-semibold mb-3">Try Kansyl for Free</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Download and use Kansyl with basic features at no cost. Track up to 5 subscriptions, 
+                  get reminders, and experience the app before upgrading to Premium for unlimited access.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                  <AnimatedGradientButton gradientColor="success" className="w-full sm:w-auto">
+                    Download Free App
+                  </AnimatedGradientButton>
+                  <p className="text-sm text-muted-foreground">No credit card required</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+        
         {/* Pricing Cards */}
         <div className="mt-12 mx-auto max-w-5xl px-4">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
