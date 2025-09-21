@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import Image from 'next/image';
 import * as THREE from 'three';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useFBO, useGLTF, MeshTransmissionMaterial } from '@react-three/drei';
+import { useGLTF, MeshTransmissionMaterial } from '@react-three/drei';
 import { easing } from 'maath';
 
 interface FluidGlassCardProps {
@@ -15,7 +15,7 @@ interface FluidGlassCardProps {
   className?: string;
 }
 
-function GlassLens({ imageTexture }: { imageTexture: THREE.Texture }) {
+function GlassLens() {
   const ref = useRef<THREE.Mesh>(null);
   const { nodes } = useGLTF('/assets/3d/lens.glb');
   const { viewport, pointer } = useThree();
@@ -63,18 +63,7 @@ function GlassLens({ imageTexture }: { imageTexture: THREE.Texture }) {
   );
 }
 
-function ImagePlane({ src, width, height }: { src: string; width: number; height: number }) {
-  const texture = useThree((state) => state.gl.domElement);
-  
-  return (
-    <mesh position={[0, 0, -1]}>
-      <planeGeometry args={[width / 100, height / 100]} />
-      <meshBasicMaterial transparent opacity={1}>
-        <primitive attach="map" object={texture} />
-      </meshBasicMaterial>
-    </mesh>
-  );
-}
+// ImagePlane component removed as it's not being used
 
 export default function FluidGlassCard({ 
   src, 
@@ -84,7 +73,6 @@ export default function FluidGlassCard({
   className = '' 
 }: FluidGlassCardProps) {
   const [hovered, setHovered] = useState(false);
-  const [imageTexture, setImageTexture] = useState<THREE.Texture | null>(null);
 
   return (
     <div 
@@ -111,7 +99,7 @@ export default function FluidGlassCard({
             style={{ width: '100%', height: '100%' }}
           >
             <ambientLight intensity={1} />
-            <GlassLens imageTexture={imageTexture!} />
+            <GlassLens />
           </Canvas>
         </div>
       )}

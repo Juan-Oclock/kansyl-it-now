@@ -3,18 +3,16 @@
 import React from 'react'
 import { DotGridHero } from "@/components/dot-grid-reactbits"
 import { PhoneMockup } from "@/components/phone-mockup"
-import { PhoneGallery } from "@/components/phone-gallery"
 import { NumberTicker } from "@/components/number-ticker"
-import { EmailCaptureForm } from "@/components/email-capture-form"
 import { Reveal } from "@/components/reveal"
 import { AnimatedGradientButton } from "@/components/animated-gradient-button"
 import { FloatingFeatureCard, FloatingFeatureGrid } from "@/components/floating-feature-cards"
 import { AnimatedText, GlitchText } from "@/components/animated-text"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Zap, Bell, TrendingUp, Shield, Cog, UserCheck, Infinity, ScanLine, Mic, Calendar, Clock, Cloud, Check, Menu, X } from "lucide-react"
+import { Zap, Bell, TrendingUp, Shield, Cog, UserCheck, Check, Menu, X } from "lucide-react"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)

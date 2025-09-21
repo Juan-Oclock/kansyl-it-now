@@ -31,7 +31,7 @@ export function DotGridTest({ className }: { className?: string }) {
     updateSize();
 
     // Simple dots array
-    const dots = [];
+    const dots: Array<{ x: number; y: number }> = [];
     const gap = 30;
     const cols = Math.ceil(container.clientWidth / gap);
     const rows = Math.ceil(container.clientHeight / gap);

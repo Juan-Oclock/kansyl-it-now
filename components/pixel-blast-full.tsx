@@ -112,7 +112,7 @@ const createLiquidEffect = (texture: THREE.Texture, opts?: { strength?: number; 
     }
     `;
   return new Effect('LiquidEffect', fragment, {
-    uniforms: new Map([
+    uniforms: new Map<string, any>([
       ['uTexture', new THREE.Uniform(texture)],
       ['uStrength', new THREE.Uniform(opts?.strength ?? 0.025)],
       ['uTime', new THREE.Uniform(0)],
@@ -355,13 +355,13 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
     const container = containerRef.current;
     if (!container) return;
     speedRef.current = speed;
-      const needsReinitKeys = ['antialias', 'liquid', 'noiseAmount'];
+      const needsReinitKeys = ['antialias', 'liquid', 'noiseAmount'] as const;
       const cfg = { antialias, liquid, noiseAmount };
     let mustReinit = false;
     if (!threeRef.current) mustReinit = true;
     else if (prevConfigRef.current) {
       for (const k of needsReinitKeys)
-        if (prevConfigRef.current[k] !== cfg[k]) {
+        if (prevConfigRef.current[k] !== cfg[k as keyof typeof cfg]) {
           mustReinit = true;
           break;
         }

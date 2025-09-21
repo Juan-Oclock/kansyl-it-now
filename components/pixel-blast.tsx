@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef } from "react"
 import * as THREE from "three"
-import { EffectComposer, EffectPass, RenderPass, Effect } from "postprocessing"
+// Removed unused postprocessing imports - using direct rendering for stability
 
 // PixelBlast with customization matching the UI settings
 export function PixelBlastHero({ className }: { className?: string }) {
@@ -53,7 +53,7 @@ export function PixelBlastHero({ className }: { className?: string }) {
       renderer = new THREE.WebGLRenderer({ canvas, context: gl, alpha: true, antialias: false })
       renderer.setPixelRatio(1) // maximum compatibility
       renderer.setSize(width, height, false)
-    } catch (e) {
+    } catch {
       applyFallback()
       return
     }
