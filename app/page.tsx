@@ -72,10 +72,10 @@ export default function Home() {
               </p>
             </Reveal>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <AnimatedGradientButton gradientColor="primary">
+              <AnimatedGradientButton gradientColor="primary" className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold">
                 Download from the App Store
               </AnimatedGradientButton>
-              <Button variant="ghost" className="border border-gray-400 hover:bg-[#A8DE28] hover:text-black hover:border-[#A8DE28] transition-all duration-200">See how it works</Button>
+              <Button variant="ghost" className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold border border-gray-400 hover:bg-[#A8DE28] hover:text-black hover:border-[#A8DE28] transition-all duration-200">See how it works</Button>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
               <span className="rounded-full border px-3 py-1">iOS 15+</span>
