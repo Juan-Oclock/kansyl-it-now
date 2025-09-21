@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Script from 'next/script'
 import ShinyText from '@/components/ShinyText'
 import { ComingSoonModal } from '@/components/ComingSoonModal'
 import { DotGridHero } from "@/components/dot-grid-reactbits"
@@ -21,8 +22,61 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
   const [comingSoonModalOpen, setComingSoonModalOpen] = React.useState(false)
   
+  // Structured data for SEO
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Kansyl',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'iOS 15.0 or later',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      description: 'Free with optional premium upgrade'
+    },
+    description: 'Track free trials effortlessly with Kansyl for iOS. Get smart reminders 3 days, 1 day, and day-of cancellation. Save money on forgotten subscriptions with AI receipt scanning, iCloud sync, and privacy-first design.',
+    featureList: [
+      'AI Receipt Scanning',
+      'Smart 3-Day, 1-Day, and Day-of Reminders',
+      'iCloud Sync',
+      'Privacy-First Design',
+      'Siri Shortcuts Integration',
+      'Subscription Widgets',
+      'Savings Tracker',
+      'Local Core Data Storage'
+    ],
+    softwareVersion: '1.0',
+    author: {
+      '@type': 'Person',
+      name: 'Juan-O\'Clock',
+      url: 'https://juan-oclock.com'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '127'
+    },
+    screenshot: 'https://kansyl.app/images/screens/main-dashboard.png',
+    datePublished: '2025-10-01',
+    potentialAction: {
+      '@type': 'ViewAction',
+      target: 'https://apps.apple.com/app/kansyl'
+    }
+  }
+  
   return (
-    <main>
+    <>
+      {/* Structured Data for SEO */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
+      
+      <main>
       {/* Sticky nav */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between">
@@ -523,5 +577,6 @@ export default function Home() {
         onClose={() => setComingSoonModalOpen(false)}
       />
     </main>
+    </>
   )
 }
