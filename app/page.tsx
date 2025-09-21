@@ -398,7 +398,7 @@ export default function Home() {
 
       {/* FAQ */}
       <section id="faq" className="container py-16 md:py-24">
-        <div className="mx-auto max-w-xl">
+        <div className="mx-auto max-w-3xl">
           <Reveal>
             <h2 className="text-3xl font-semibold tracking-tight">FAQs</h2>
           </Reveal>
