@@ -180,7 +180,7 @@ export default function Home() {
           {/* Left column - Video/Demo */}
           <Reveal delay={0.2}>
             <div className="flex justify-center lg:justify-end lg:mr-[-3rem]">
-              <div className="relative group">
+              <div className="relative group lg:pr-20">
                 <div className="relative w-[280px] sm:w-[320px] md:w-[360px] h-[500px] sm:h-[570px] md:h-[640px] bg-gradient-to-b from-neutral-900/90 to-neutral-900/50 backdrop-blur-xl rounded-2xl border border-neutral-800/50 flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]"></div>
                   <div className="text-center text-neutral-400 z-10">
