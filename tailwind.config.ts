@@ -98,20 +98,29 @@ const config: Config = {
   					transform: 'translateY(-6px)'
   				}
   			},
-  			shimmer: {
-  				'0%': {
-  					backgroundPosition: '-200% 0'
-  				},
-  				'100%': {
-  					backgroundPosition: '200% 0'
-  				}
+  		shimmer: {
+  			'0%': {
+  				backgroundPosition: '-200% 0'
+  			},
+  			'100%': {
+  				backgroundPosition: '200% 0'
   			}
+  		},
+  		shine: {
+  			'0%': {
+  				backgroundPosition: '200% 50%'
+  			},
+  			'100%': {
+  				backgroundPosition: '-200% 50%'
+  			}
+  		}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			float: 'float 6s ease-in-out infinite',
-  			shimmer: 'shimmer 2.5s linear infinite'
+  			shimmer: 'shimmer 2.5s linear infinite',
+  			shine: 'shine 3s linear infinite'
   		},
   		perspective: {
   			'500': '500px',

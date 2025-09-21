@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import ShinyText from '@/components/ShinyText'
 import { DotGridHero } from "@/components/dot-grid-reactbits"
 import { PhoneMockup } from "@/components/phone-mockup"
 import { NumberTicker } from "@/components/number-ticker"
@@ -23,7 +24,9 @@ export default function Home() {
       {/* Sticky nav */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between">
-          <a href="#" className="font-semibold">Kansyl</a>
+          <a href="#">
+            <ShinyText text="Kansyl" disabled={false} speed={4} className="font-semibold text-xl" />
+          </a>
           
           {/* Desktop Navigation */}
           <nav className="hidden gap-6 text-sm md:flex">
