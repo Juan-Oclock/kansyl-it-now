@@ -176,10 +176,10 @@ export default function Home() {
           </p>
         </Reveal>
         
-        <div className="mt-16 grid gap-12 lg:grid-cols-2 items-center">
+        <div className="mt-16 grid gap-8 lg:grid-cols-2 items-center lg:gap-2 lg:max-w-4xl lg:mx-auto">
           {/* Left column - Video/Demo */}
           <Reveal delay={0.2}>
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center lg:justify-end lg:mr-[-3rem]">
               <div className="relative group">
                 <div className="relative w-[280px] sm:w-[320px] md:w-[360px] h-[500px] sm:h-[570px] md:h-[640px] bg-gradient-to-b from-neutral-900/90 to-neutral-900/50 backdrop-blur-xl rounded-2xl border border-neutral-800/50 flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]"></div>
