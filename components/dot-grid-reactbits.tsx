@@ -324,7 +324,7 @@ export function DotGridHero({ className }: { className?: string }) {
       }}
       dotSize={4}            // Smaller dots for denser grid
       gap={8}                // Tighter spacing
-      baseColor="#0E0B13"    // Very dark purple base color
+      baseColor="#1C1627"    // Dark purple base color
       activeColor="#5227ff"  // Purple active color
       proximity={120}        // From customization panel
       speedTrigger={100}     // Keep default for speed trigger
