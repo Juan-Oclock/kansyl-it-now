@@ -157,7 +157,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-semibold mb-4">Changes to These Terms</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We may update these Terms from time to time. Changes will be posted on this page with an updated 
-                "Last updated" date. Continued use of the App after changes take effect constitutes acceptance.
+                &ldquo;Last updated&rdquo; date. Continued use of the App after changes take effect constitutes acceptance.
               </p>
             </section>
           </Reveal>
