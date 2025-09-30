@@ -569,7 +569,7 @@ export default function Home() {
         <nav className="flex gap-4 text-sm text-muted-foreground">
           <a href="/terms" className="hover:text-foreground transition-colors">Terms</a>
           <a href="/privacy" className="hover:text-foreground transition-colors">Privacy</a>
-          <a href="mailto:onelasttimejuan@gmail.com" className="hover:text-foreground transition-colors">Contact</a>
+          <a href="mailto:kansyl@juan-oclock.com" className="hover:text-foreground transition-colors">Contact</a>
           <a href="https://github.com/Juan-Oclock/kansyl" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
         </nav>
       </footer>
