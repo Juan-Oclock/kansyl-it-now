@@ -263,7 +263,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-foreground">9. Disclaimers and Warranties</h2>
-            <h3 className="text-xl font-medium mb-2 text-foreground">9.1 "AS IS" Service</h3>
+            <h3 className="text-xl font-medium mb-2 text-foreground">9.1 &quot;AS IS&quot; Service</h3>
             <p className="leading-relaxed">KANSYL IS PROVIDED ON AN &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
             <ul className="list-disc list-inside space-y-2">
               <li>Warranties of merchantability</li>
