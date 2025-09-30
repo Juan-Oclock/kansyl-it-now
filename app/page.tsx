@@ -1,22 +1,31 @@
 "use client"
 
 import React from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Script from 'next/script'
 import ShinyText from '@/components/ShinyText'
-import { ComingSoonModal } from '@/components/ComingSoonModal'
-import { DotGridHero } from "@/components/dot-grid-reactbits"
-import { PhoneMockup } from "@/components/phone-mockup"
-import { NumberTicker } from "@/components/number-ticker"
-import { Reveal } from "@/components/reveal"
-import { AnimatedGradientButton } from "@/components/animated-gradient-button"
-import { FloatingFeatureCard, FloatingFeatureGrid } from "@/components/floating-feature-cards"
-import { AnimatedText, GlitchText } from "@/components/animated-text"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Zap, Bell, TrendingUp, Shield, Cog, Check, Menu, X, ScanLine } from "lucide-react"
+
+// Lazy load heavy components
+const ComingSoonModal = dynamic(() => import('@/components/ComingSoonModal').then(mod => ({ default: mod.ComingSoonModal })), {
+  ssr: false
+})
+const DotGridHero = dynamic(() => import("@/components/dot-grid-reactbits").then(mod => ({ default: mod.DotGridHero })), {
+  ssr: false
+})
+const PhoneMockup = dynamic(() => import("@/components/phone-mockup").then(mod => ({ default: mod.PhoneMockup })))
+const NumberTicker = dynamic(() => import("@/components/number-ticker").then(mod => ({ default: mod.NumberTicker })))
+const Reveal = dynamic(() => import("@/components/reveal").then(mod => ({ default: mod.Reveal })))
+const AnimatedGradientButton = dynamic(() => import("@/components/animated-gradient-button").then(mod => ({ default: mod.AnimatedGradientButton })))
+const FloatingFeatureCard = dynamic(() => import("@/components/floating-feature-cards").then(mod => ({ default: mod.FloatingFeatureCard })))
+const FloatingFeatureGrid = dynamic(() => import("@/components/floating-feature-cards").then(mod => ({ default: mod.FloatingFeatureGrid })))
+const AnimatedText = dynamic(() => import("@/components/animated-text").then(mod => ({ default: mod.AnimatedText })))
+const GlitchText = dynamic(() => import("@/components/animated-text").then(mod => ({ default: mod.GlitchText })))
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
@@ -121,14 +130,10 @@ export default function Home() {
           <div>
             <Reveal>
               <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
-                <AnimatedText animation="stagger" delay={0.2}>
-                  Never forget a free trial again
-                </AnimatedText>
+                Never forget a free trial again
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                <AnimatedText animation="fadeInUp" delay={0.6}>
-                  Track free trials, get smart reminders, and stop wasting money on forgotten subscriptions.
-                </AnimatedText>
+                Track free trials, get smart reminders, and stop wasting money on forgotten subscriptions.
               </p>
             </Reveal>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -155,18 +160,14 @@ export default function Home() {
 
       {/* Enhanced Features Section */}
       <section id="features" className="container py-16 md:py-24">
-        <Reveal>
+        <div>
           <h2 className="text-3xl font-semibold tracking-tight">
-            <AnimatedText animation="gradientWipe" delay={0.2}>
-              Everything you need to stay on top of trials
-            </AnimatedText>
+            Everything you need to stay on top of trials
           </h2>
           <p className="mt-2 text-muted-foreground">
-            <AnimatedText animation="fadeInUp" delay={0.4}>
-              Lightning-fast entry, smart reminders, and privacy-first design.
-            </AnimatedText>
+            Lightning-fast entry, smart reminders, and privacy-first design.
           </p>
-        </Reveal>
+        </div>
         
         {/* React Bits Enhanced Feature Cards */}
         <FloatingFeatureGrid className="mt-8">
@@ -229,18 +230,14 @@ export default function Home() {
 
       {/* How it works */}
       <section id="how" className="container py-16 md:py-24">
-        <Reveal>
+        <div>
           <h2 className="text-3xl font-semibold tracking-tight text-center">
-            <AnimatedText animation="gradientWipe" delay={0.2}>
-              How it works
-            </AnimatedText>
+            How it works
           </h2>
           <p className="mt-2 text-center text-muted-foreground">
-            <AnimatedText animation="fadeInUp" delay={0.4}>
-              Three simple steps to never miss a cancel date
-            </AnimatedText>
+            Three simple steps to never miss a cancel date
           </p>
-        </Reveal>
+        </div>
         
         <div className="mt-16 grid gap-8 lg:grid-cols-2 items-center lg:gap-2 lg:max-w-4xl lg:mx-auto">
           {/* Left column - Video/Demo */}
@@ -254,7 +251,9 @@ export default function Home() {
                     fill
                     className="object-cover object-center"
                     unoptimized={true}
-                    priority
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYwIiBoZWlnaHQ9IjY0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxZTFlIi8+PC9zdmc+"
                   />
                 </div>
               </div>
@@ -309,18 +308,14 @@ export default function Home() {
 
       {/* Pricing */}
       <section id="pricing" className="container py-16 md:py-24">
-        <Reveal>
+        <div>
           <h2 className="text-3xl font-semibold tracking-tight text-center">
-            <AnimatedText animation="gradientWipe" delay={0.2}>
-              Simple, transparent pricing
-            </AnimatedText>
+            Simple, transparent pricing
           </h2>
           <p className="mt-2 text-center text-muted-foreground">
-            <AnimatedText animation="fadeInUp" delay={0.4}>
-              Choose the plan that works best for you
-            </AnimatedText>
+            Choose the plan that works best for you
           </p>
-        </Reveal>
+        </div>
         
         {/* Pricing Cards */}
         <div className="mt-12 mx-auto max-w-5xl px-4">

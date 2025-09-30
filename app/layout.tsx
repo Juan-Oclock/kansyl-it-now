@@ -3,7 +3,14 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
 
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+const inter = Inter({ 
+  subsets: ["latin"], 
+  display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
+  variable: '--font-inter'
+})
 
 const title = "Kansyl — Never forget a free trial again"
 const description =
