@@ -17,6 +17,7 @@ export function PhoneMockup() {
         width={320}
         height={640}
         priority
+        fetchPriority="high"
         className="rounded-[36px] shadow-2xl"
       />
     </motion.div>

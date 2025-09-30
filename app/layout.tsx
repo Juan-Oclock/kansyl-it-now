@@ -9,7 +9,8 @@ const inter = Inter({
   preload: true,
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
-  variable: '--font-inter'
+  variable: '--font-inter',
+  weight: ['400', '500', '600', '700']
 })
 
 const title = "Kansyl — Never forget a free trial again"

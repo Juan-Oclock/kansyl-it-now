@@ -2,7 +2,6 @@
 
 import React from 'react'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 import Script from 'next/script'
 import ShinyText from '@/components/ShinyText'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -245,16 +244,19 @@ export default function Home() {
             <div className="flex justify-center lg:justify-end lg:mr-[-3rem]">
               <div className="relative group lg:pr-20">
                 <div className="relative w-[280px] sm:w-[320px] md:w-[360px] h-[500px] sm:h-[570px] md:h-[640px] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/assets/video/kansel app demo.gif"
-                    alt="Kansyl app demo showing how to add trials and manage subscriptions"
-                    fill
-                    className="object-cover object-center"
-                    unoptimized={true}
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYwIiBoZWlnaHQ9IjY0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxZTFlIi8+PC9zdmc+"
-                  />
+                  <video
+                    className="w-full h-full object-cover object-center"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYwIiBoZWlnaHQ9IjY0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWUxZTFlIi8+PC9zdmc+"
+                    aria-label="Kansyl app demo showing how to add trials and manage subscriptions"
+                  >
+                    <source src="/assets/video/kansel-app-demo.webm" type="video/webm" />
+                    <source src="/assets/video/kansel-app-demo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
