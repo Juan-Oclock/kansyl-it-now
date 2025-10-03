@@ -43,16 +43,16 @@ export default function Home() {
       priceCurrency: 'USD',
       description: 'Free with optional premium upgrade'
     },
-    description: 'Track free trials effortlessly with Kansyl for iOS. Get smart reminders 3 days, 1 day, and day-of cancellation. Save money on forgotten subscriptions with AI receipt scanning, iCloud sync, and privacy-first design.',
+    description: 'Track free trials effortlessly with Kansyl for iOS. Get smart reminders 3 days, 1 day, and day-of cancellation. Save money on forgotten subscriptions with AI receipt scanning, local secure storage, and privacy-first design.',
     featureList: [
       'AI Receipt Scanning',
       'Smart 3-Day, 1-Day, and Day-of Reminders',
-      'iCloud Sync',
+      'Local Secure Storage',
       'Privacy-First Design',
       'Siri Shortcuts Integration',
       'Subscription Widgets',
       'Savings Tracker',
-      'Local Core Data Storage'
+      'Manual Data Export'
     ],
     softwareVersion: '1.0',
     author: {
@@ -196,7 +196,7 @@ export default function Home() {
           />
           <FloatingFeatureCard 
             title="Power features" 
-            description="Siri Shortcuts, Share Extension, Widgets, iCloud sync, export options."
+            description="Siri Shortcuts, Share Extension, Widgets, manual export options."
             icon={<Cog className="w-8 h-8" />}
             delay={0.5}
           />
@@ -432,7 +432,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                <span>iCloud backup</span>
+                <span>Data export</span>
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary flex-shrink-0" />
@@ -493,13 +493,13 @@ export default function Home() {
             <AccordionItem value="item-2">
               <AccordionTrigger>What data is stored and where?</AccordionTrigger>
               <AccordionContent>
-                Your data lives locally in Core Data. We don&apos;t sell data. Analytics are opt-in only.
+                Your data is stored locally on your device only using Core Data. We don&apos;t sell data. Analytics are opt-in only. In v1.0, data does not sync across devices.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Does it sync with iCloud?</AccordionTrigger>
               <AccordionContent>
-                Yes. iCloud sync keeps your trials up-to-date across devices, privately.
+                Not in v1.0. Your subscription data is stored locally on your device only. iCloud sync will be available as a premium feature in a future update. Use the Export Data feature to manually backup your data.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
@@ -511,7 +511,7 @@ export default function Home() {
             <AccordionItem value="item-5">
               <AccordionTrigger>What&apos;s in Premium vs Free?</AccordionTrigger>
               <AccordionContent>
-                Free gets all premium features including AI receipt scanning, savings tracking, Shortcuts, widgets, iCloud sync, and export - but limited to 5 subscriptions. Premium unlocks unlimited subscriptions.
+                Free gets all premium features including AI receipt scanning, savings tracking, Shortcuts, widgets, and data export - but limited to 5 subscriptions. Premium unlocks unlimited subscriptions. Note: In v1.0, all data is stored locally on your device.
               </AccordionContent>
             </AccordionItem>
             </Accordion>

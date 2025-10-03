@@ -28,10 +28,10 @@ export default function PrivacyPage() {
             Privacy Policy for Kansyl
           </h1>
           <p className="text-muted-foreground mb-2">
-            Last Updated: September 30, 2025
+            Last Updated: October 3, 2025
           </p>
           <p className="text-muted-foreground mb-8">
-            Effective Date: September 30, 2025
+            Effective Date: October 3, 2025
           </p>
         </div>
 
@@ -115,8 +115,11 @@ export default function PrivacyPage() {
               <li>Track your subscription services and free trials</li>
               <li>Calculate total spending and savings</li>
               <li>Send timely renewal reminders</li>
-              <li>Sync your data across your devices</li>
+              <li>Store your data securely on your device</li>
             </ul>
+            <p className="leading-relaxed mt-3">
+              <strong className="text-foreground">Note:</strong> In v1.0, data is stored locally on your device only and does not sync across multiple devices.
+            </p>
 
             <h4 className="text-lg font-medium mb-2 mt-4 text-foreground">AI Receipt Scanning:</h4>
             <ul className="list-disc list-inside space-y-2">
@@ -154,21 +157,16 @@ export default function PrivacyPage() {
             
             <h3 className="text-xl font-medium mb-3 text-foreground">3.1 Where Your Data is Stored</h3>
             
-            <h4 className="text-lg font-medium mb-2 text-foreground">Local Device Storage:</h4>
+            <h4 className="text-lg font-medium mb-2 text-foreground">Local Storage Only (v1.0):</h4>
+            <p className="leading-relaxed mb-3">Your subscription data is stored ONLY on your device:</p>
             <ul className="list-disc list-inside space-y-2">
-              <li>Your subscription data is stored locally on your device using Core Data (Apple&apos;s local database framework).</li>
-              <li>This data is protected by your device&apos;s security features (encryption, passcode/biometrics).</li>
+              <li><strong className="text-foreground">Local Storage:</strong> All subscription data is stored locally on your iPhone using Core Data (Apple&apos;s local database framework)</li>
+              <li><strong className="text-foreground">No Cloud Sync:</strong> In version 1.0, your data does NOT sync across devices</li>
+              <li><strong className="text-foreground">Device-Only:</strong> Your data remains on your iPhone and is never uploaded to cloud servers</li>
             </ul>
-
-            <h4 className="text-lg font-medium mb-2 mt-4 text-foreground">Cloud Synchronization (Optional):</h4>
-            <ul className="list-disc list-inside space-y-2">
-              <li>If you choose to enable sync, your subscription data is stored in:
-                <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                  <li><strong className="text-foreground">Supabase:</strong> A secure, privacy-focused backend service (PostgreSQL database hosted in the cloud)</li>
-                  <li><strong className="text-foreground">Location:</strong> Your data is stored in Supabase&apos;s secure data centers (primarily US-based)</li>
-                </ul>
-              </li>
-            </ul>
+            <p className="leading-relaxed mt-3">
+              <strong className="text-foreground">Note:</strong> iCloud sync will be available as a premium feature in a future update.
+            </p>
 
             <h4 className="text-lg font-medium mb-2 mt-4 text-foreground">API Keys:</h4>
             <ul className="list-disc list-inside space-y-2">
@@ -193,6 +191,22 @@ export default function PrivacyPage() {
               <li><strong className="text-foreground">Account Deletion:</strong> When you delete your account, all your subscription data is permanently deleted within 30 days.</li>
               <li><strong className="text-foreground">Inactive Accounts:</strong> Accounts inactive for more than 2 years may be subject to deletion after notification.</li>
             </ul>
+
+            <h3 className="text-xl font-medium mb-3 mt-6 text-foreground">3.4 Data Sync Status (v1.0)</h3>
+            <p className="leading-relaxed mb-3"><strong className="text-foreground">Important Notice About Data Sync:</strong></p>
+            <p className="leading-relaxed mb-3">In the current version (v1.0) of Kansyl:</p>
+            <ul className="list-none space-y-2">
+              <li>❌ Your subscription data does NOT sync across devices</li>
+              <li>❌ Your data does NOT get backed up to iCloud or cloud storage</li>
+              <li>✅ Your data is stored ONLY on your iPhone using local Core Data storage</li>
+              <li>✅ Your data is protected by your device&apos;s security features (encryption, passcode, Face ID/Touch ID)</li>
+            </ul>
+            <p className="leading-relaxed mt-4">
+              <strong className="text-foreground">Recommendation:</strong> Use the &quot;Export Data&quot; feature (Settings → Account → Export Data) to create backups of your subscription data manually.
+            </p>
+            <p className="leading-relaxed mt-4">
+              <strong className="text-foreground">Future Updates:</strong> iCloud sync will be available as a premium feature in a future version.
+            </p>
           </section>
 
           <section>
@@ -202,12 +216,13 @@ export default function PrivacyPage() {
             
             <div className="space-y-4">
               <div>
-                <h4 className="text-lg font-medium mb-2 text-foreground">Supabase (Backend & Authentication):</h4>
+                <h4 className="text-lg font-medium mb-2 text-foreground">Supabase (Authentication ONLY):</h4>
                 <ul className="list-disc list-inside space-y-2">
-                  <li><strong className="text-foreground">Purpose:</strong> User authentication and data synchronization</li>
-                  <li><strong className="text-foreground">Data Shared:</strong> Email address, subscription data you create</li>
+                  <li><strong className="text-foreground">Purpose:</strong> User authentication via Google OAuth ONLY</li>
+                  <li><strong className="text-foreground">Data Shared:</strong> Email address (for authentication purposes only)</li>
+                  <li><strong className="text-foreground">Data NOT Shared:</strong> Subscription data is NOT stored on Supabase</li>
+                  <li><strong className="text-foreground">Scope:</strong> Supabase is used exclusively for sign-in/sign-out functionality</li>
                   <li><strong className="text-foreground">Privacy Policy:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#A8DE28] hover:text-[#A8DE28]/80 underline">https://supabase.com/privacy</a></li>
-                  <li><strong className="text-foreground">Location:</strong> United States</li>
                   <li><strong className="text-foreground">Security:</strong> SOC 2 Type II certified, GDPR compliant</li>
                 </ul>
               </div>
@@ -429,6 +444,14 @@ export default function PrivacyPage() {
               <li>✅ Basic app usage data (anonymized)</li>
             </ul>
 
+            <h3 className="text-xl font-medium mb-3 mt-6 text-foreground">Where Your Data is Stored:</h3>
+            <ul className="list-none space-y-2">
+              <li>✅ Locally on your device (Core Data)</li>
+              <li>❌ NOT on cloud servers</li>
+              <li>❌ NOT synced to iCloud (in v1.0)</li>
+              <li>❌ NOT uploaded to Supabase</li>
+            </ul>
+
             <h3 className="text-xl font-medium mb-3 mt-6 text-foreground">What Data We DO NOT Collect:</h3>
             <ul className="list-none space-y-2">
               <li>❌ Credit card or payment information</li>
@@ -443,7 +466,7 @@ export default function PrivacyPage() {
             <h3 className="text-xl font-medium mb-3 mt-6 text-foreground">How We Use Your Data:</h3>
             <ul className="list-none space-y-2">
               <li>✅ Provide subscription tracking services</li>
-              <li>✅ Sync your data across devices</li>
+              <li>✅ Store your data securely on your device</li>
               <li>✅ Send renewal reminders</li>
               <li>✅ Analyze receipts with AI (opt-in feature)</li>
               <li>✅ Improve app functionality</li>

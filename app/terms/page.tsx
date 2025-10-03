@@ -28,10 +28,10 @@ export default function TermsPage() {
             Terms of Service for Kansyl
           </h1>
           <p className="text-muted-foreground mb-2">
-            Last Updated: September 30, 2025
+            Last Updated: October 3, 2025
           </p>
           <p className="text-muted-foreground mb-8">
-            Effective Date: September 30, 2025
+            Effective Date: October 3, 2025
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function TermsPage() {
               <li>Monitor subscription costs and spending</li>
               <li>Receive renewal reminders before billing dates</li>
               <li>Scan receipts using AI to automatically detect subscription information</li>
-              <li>Sync your subscription data across devices</li>
+              <li>Store your subscription data locally on your device (no cloud sync in v1.0)</li>
               <li>Calculate savings from cancelled subscriptions</li>
               <li>Organize subscriptions by category</li>
             </ul>
@@ -236,7 +236,11 @@ export default function TermsPage() {
             <p className="leading-relaxed">Kansyl integrates with third-party services:</p>
             <ul className="list-disc list-inside space-y-2">
               <li>
-                <strong className="text-foreground">Supabase (Backend & Authentication):</strong><br />
+                <strong className="text-foreground">Supabase (Authentication Only):</strong><br />
+                Purpose: User authentication via Google OAuth<br />
+                Data Shared: Email address only (for authentication)<br />
+                Data NOT Shared: Your subscription data is NOT stored on or synced via Supabase<br />
+                Scope: Supabase is used exclusively for sign-in/sign-out functionality<br />
                 Privacy Policy: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#A8DE28] hover:text-[#A8DE28]/80 underline">https://supabase.com/privacy</a><br />
                 Terms: <a href="https://supabase.com/terms" target="_blank" rel="noopener noreferrer" className="text-[#A8DE28] hover:text-[#A8DE28]/80 underline">https://supabase.com/terms</a>
               </li>
@@ -257,7 +261,14 @@ export default function TermsPage() {
               <li>Third-party terms and privacy policies apply to their respective services</li>
               <li>Service availability may change without notice</li>
             </ul>
-            <h3 className="text-xl font-medium mt-6 mb-2 text-foreground">8.3 No Affiliation</h3>
+            <h3 className="text-xl font-medium mt-6 mb-2 text-foreground">8.3 iCloud/CloudKit (Not Used in v1.0)</h3>
+            <ul className="list-disc list-inside space-y-2">
+              <li><strong className="text-foreground">Status:</strong> Not implemented in version 1.0</li>
+              <li><strong className="text-foreground">Future Plans:</strong> iCloud sync will be available as a premium feature in a future update</li>
+              <li><strong className="text-foreground">Current Storage:</strong> All data is stored locally on your device using Core Data</li>
+            </ul>
+
+            <h3 className="text-xl font-medium mt-6 mb-2 text-foreground">8.4 No Affiliation</h3>
             <p className="leading-relaxed">Kansyl is not affiliated with, endorsed by, or sponsored by any subscription service providers whose services you track in the App.</p>
           </section>
 
@@ -442,7 +453,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-semibold mb-4 text-foreground text-center">19. Acceptance of Terms</h2>
             <p className="leading-relaxed text-center">BY DOWNLOADING, INSTALLING, OR USING KANSYL, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS OF SERVICE.</p>
             <p className="leading-relaxed text-center mt-2">IF YOU DO NOT AGREE, DO NOT USE THE APP.</p>
-            <p className="leading-relaxed text-center mt-6 italic">Thank you for using Kansyl!<br />Last Updated: September 30, 2025</p>
+            <p className="leading-relaxed text-center mt-6 italic">Thank you for using Kansyl!<br />Last Updated: October 3, 2025</p>
           </section>
         </div>
       </section>
