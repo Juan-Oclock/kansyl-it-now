@@ -321,7 +321,7 @@ export default function Home() {
         
         {/* Pricing Cards */}
         <div className="mt-12 mx-auto max-w-5xl px-4">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {/* Monthly */}
             <Reveal delay={0.1}>
               <Card className="relative overflow-hidden bg-background/60 backdrop-blur border-muted hover:border-muted-foreground/20 transition-all duration-300 hover:shadow-xl">
@@ -366,31 +366,6 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <Button 
-                    className="w-full cursor-pointer" 
-                    size="lg"
-                    onClick={() => setComingSoonModalOpen(true)}
-                  >
-                    Get Started
-                  </Button>
-                </CardContent>
-              </Card>
-            </Reveal>
-            
-            {/* Lifetime */}
-            <Reveal delay={0.3}>
-              <Card className="relative overflow-hidden bg-background/60 backdrop-blur border-muted hover:border-muted-foreground/20 transition-all duration-300 hover:shadow-xl">
-                <CardHeader className="pb-8">
-                  <CardTitle className="text-xl">Lifetime</CardTitle>
-                  <CardDescription>One-time purchase</CardDescription>
-                  <div className="pt-4">
-                    <span className="text-4xl font-bold">$49.99</span>
-                    <span className="text-muted-foreground ml-2">once</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-2">Forever access</p>
-                </CardHeader>
-                <CardContent>
-                  <Button 
-                    variant="outline" 
                     className="w-full cursor-pointer" 
                     size="lg"
                     onClick={() => setComingSoonModalOpen(true)}
