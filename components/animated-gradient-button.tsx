@@ -10,7 +10,7 @@ interface AnimatedGradientButtonProps extends ButtonProps {
 }
 
 const AnimatedGradientButton = forwardRef<HTMLButtonElement, AnimatedGradientButtonProps>(
-  ({ className, children, gradientColor = "primary", ...props }, ref) => {
+  ({ className, children, gradientColor = "primary", asChild, ...props }, ref) => {
     const gradientClasses = {
       primary: "bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:via-cyan-500 hover:to-blue-600",
       success: "bg-gradient-to-r from-green-600 via-emerald-500 to-teal-500 hover:from-green-500 hover:via-teal-500 hover:to-green-600",
@@ -33,14 +33,19 @@ const AnimatedGradientButton = forwardRef<HTMLButtonElement, AnimatedGradientBut
             "after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/10 after:to-transparent after:translate-x-[-100%] after:transition-transform after:duration-1000 hover:after:translate-x-[100%]",
             className
           )}
+          {...(asChild ? { asChild: true } : {})}
           {...props}
         >
-          <span className="relative z-10 font-medium">{children}</span>
-          
-          {/* Animated border glow */}
-          <div className="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute inset-[-2px] bg-gradient-to-r from-white/20 to-white/20 rounded-md blur-sm" />
-          </div>
+          {asChild ? (
+            children
+          ) : (
+            <>
+              <span className="relative z-10 font-medium">{children}</span>
+              <div className="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-[-2px] bg-gradient-to-r from-white/20 to-white/20 rounded-md blur-sm" />
+              </div>
+            </>
+          )}
         </Button>
       </motion.div>
     )

@@ -136,12 +136,14 @@ export default function Home() {
               </p>
             </Reveal>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <AnimatedGradientButton 
-                gradientColor="primary" 
+              <AnimatedGradientButton
+                gradientColor="primary"
                 className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold cursor-pointer"
-                onClick={() => setComingSoonModalOpen(true)}
+                asChild
               >
-                Start Free, Upgrade Anytime
+                <a href="https://apps.apple.com/us/app/kansyl-subscription-manager/id6753582176" target="_blank" rel="noopener noreferrer">
+                  Start Free, Upgrade Anytime
+                </a>
               </AnimatedGradientButton>
               <Button variant="ghost" className="w-full sm:w-auto h-12 sm:h-10 text-base font-semibold border border-gray-400 hover:bg-[#A8DE28] hover:text-black hover:border-[#A8DE28] transition-all duration-200" asChild>
                 <a href="#how">See how it works</a>
@@ -334,13 +336,15 @@ export default function Home() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <Button 
-                    variant="outline" 
-                    className="w-full cursor-pointer" 
+                  <Button
+                    variant="outline"
+                    className="w-full cursor-pointer"
                     size="lg"
-                    onClick={() => setComingSoonModalOpen(true)}
+                    asChild
                   >
-                    Get Started
+                    <a href="https://apps.apple.com/us/app/kansyl-subscription-manager/id6753582176" target="_blank" rel="noopener noreferrer">
+                      Get Started
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -365,12 +369,14 @@ export default function Home() {
                   <p className="text-sm text-primary mt-2 font-medium">Save 44%</p>
                 </CardHeader>
                 <CardContent>
-                  <Button 
-                    className="w-full cursor-pointer" 
+                  <Button
+                    className="w-full cursor-pointer"
                     size="lg"
-                    onClick={() => setComingSoonModalOpen(true)}
+                    asChild
                   >
-                    Get Started
+                    <a href="https://apps.apple.com/us/app/kansyl-subscription-manager/id6753582176" target="_blank" rel="noopener noreferrer">
+                      Get Started
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -436,12 +442,14 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 md:flex-shrink-0">
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="bg-primary hover:bg-primary/90 cursor-pointer"
-                    onClick={() => setComingSoonModalOpen(true)}
+                    asChild
                   >
-                    Download Free
+                    <a href="https://apps.apple.com/us/app/kansyl-subscription-manager/id6753582176" target="_blank" rel="noopener noreferrer">
+                      Download Free
+                    </a>
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">iOS 15+ Required</p>
                 </div>
@@ -509,13 +517,15 @@ export default function Home() {
             </AnimatedText>
           </p>
           <div className="mt-6 flex justify-center">
-            <AnimatedGradientButton 
-              size="lg" 
+            <AnimatedGradientButton
+              size="lg"
               gradientColor="success"
-              onClick={() => setComingSoonModalOpen(true)}
               className="cursor-pointer"
+              asChild
             >
-              Download from the App Store
+              <a href="https://apps.apple.com/us/app/kansyl-subscription-manager/id6753582176" target="_blank" rel="noopener noreferrer">
+                Download from the app store
+              </a>
             </AnimatedGradientButton>
           </div>
         </div>
