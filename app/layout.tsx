@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { Inter } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
+import Script from "next/script"
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -111,6 +112,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YQMS9PZ3K7"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YQMS9PZ3K7');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         {children}
         <Toaster position="top-center" richColors />
