@@ -1,4 +1,4 @@
-'use client'
+// Server Component (no 'use client') to allow metadata export
 
 import type { Metadata } from 'next'
 import React from 'react'
