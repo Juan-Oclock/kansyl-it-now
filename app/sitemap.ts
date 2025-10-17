@@ -1,7 +1,11 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://kansyl.juan-oclock.com'
+  const vercelEnv = process.env.VERCEL_ENV ?? process.env.NODE_ENV
+  const isProd = vercelEnv === 'production'
+  const baseUrl = isProd
+    ? 'https://kansyl.juan-oclock.com'
+    : process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
   
   // Get current date for lastModified
   const currentDate = new Date()
