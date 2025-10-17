@@ -30,6 +30,8 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
   const [comingSoonModalOpen, setComingSoonModalOpen] = React.useState(false)
   
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+  
   // Structured data for SEO
   const structuredData = {
     '@context': 'https://schema.org',
@@ -65,7 +67,7 @@ export default function Home() {
       ratingValue: '4.9',
       reviewCount: '127'
     },
-    screenshot: 'https://kansyl.app/images/screens/main-dashboard.png',
+    screenshot: `${siteUrl}/og-image.png`,
     datePublished: '2025-10-01',
     potentialAction: {
       '@type': 'ViewAction',
@@ -128,11 +130,11 @@ export default function Home() {
         <div className="container relative z-10 grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
           <div>
             <Reveal>
-              <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
-                Never forget a free trial again
+              <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl leading-tight md:leading-[1.2]">
+                Subscription manager with smart trial reminders — cancel subscriptions on time
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Track free trials, get smart reminders, and stop wasting money on forgotten subscriptions.
+                Kansyl is a subscription manager that gives timely trial reminders so you can cancel subscriptions on time and avoid unwanted charges.
               </p>
             </Reveal>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">

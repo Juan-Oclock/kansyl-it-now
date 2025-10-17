@@ -1,10 +1,27 @@
 'use client'
 
+import type { Metadata } from 'next'
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | Kansyl',
+  description: 'Read Kansyl’s Terms of Service covering app usage, data handling, AI features, and user rights.',
+  alternates: {
+    canonical: `${siteUrl}/terms`,
+  },
+  openGraph: {
+    url: `${siteUrl}/terms`,
+    title: 'Terms of Service | Kansyl',
+    description: 'Terms of Service for Kansyl, the privacy-first subscription manager.',
+    images: ['/og-image.png'],
+  },
+}
 
 export default function TermsPage() {
   return (

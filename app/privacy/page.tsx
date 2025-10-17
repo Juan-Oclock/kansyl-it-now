@@ -1,10 +1,27 @@
 'use client'
 
+import type { Metadata } from 'next'
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Kansyl',
+  description: 'Kansyl is a privacy-first subscription manager. Your data is stored locally on your device; we do not use third-party analytics or advertising SDKs.',
+  alternates: {
+    canonical: `${siteUrl}/privacy`,
+  },
+  openGraph: {
+    url: `${siteUrl}/privacy`,
+    title: 'Privacy Policy | Kansyl',
+    description: 'Privacy-first subscription manager with local storage and no third-party tracking.',
+    images: ['/og-image.png'],
+  },
+}
 
 export default function PrivacyPage() {
   return (
